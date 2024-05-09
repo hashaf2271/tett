@@ -8,20 +8,27 @@ variable "project" {
   description = "The project all resources are located in"
 }
 
-variable "facebook_report_types" {
-  type        = list(string)
-  description = "report types used in facebook or instagram"
-  default     = ["ad_report/ads", "ad_report/adsets", "ad_report/campaigns", "page_report", "post_report", "video_report", "page_names"]
+variable "name" {
+  type        = string
+  description = "The name of the Cloud Function"
 }
 
-variable "instagram_report_types" {
-  type        = list(string)
-  description = "report types used in facebook or instagram"
-  default     = ["media_report", "story_report", "video_report", "user_insight_report/day_param", "user_insight_report/audience"]
+variable "trigger_function_name" {
+  type        = string
+  description = "The entry point name of the Cloud Function"
 }
 
-variable "snapchat_report_types" {
-  type        = list(string)
-  description = "report types used in snapchat"
-  default     = ["publisher_analytics_report_audience", "publisher_analytics_report_behaviour", "publisher_revenue_report", "story_revenue_report"]
+variable "script_dir_name" {
+  type        = string
+  description = "The name of the Script directory"
+}
+
+variable "output_bucket_name" {
+  type        = string
+  description = "The name of the bucket to write to"
+}
+
+variable "uses_utilities_library" {
+  type        = bool
+  description = "Whether or not the lds-utilities library is used in the Cloud Function"
 }
